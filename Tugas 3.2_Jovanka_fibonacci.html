@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Deret Fibonacci</title>
+        <style>
+        .tabel{
+            background-color: coral;
+            margin: auto;
+            border-style: groove;
+            padding: 20px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: medium;
+        }
+        </style>
+    </head>
+    <body>
+        <form name="fib">
+            <table class="tabel">
+                <tr>
+                    <th class="header" colspan="3" align="center"> DERET FIBONACCI</th>
+                </tr>
+                <tr>
+                    <td>Masukkan Jumlah Deret</td><td>:</td>
+                    <td><input class="input" type="number" name="deret"></td>
+                </tr>
+                <tr>
+                    <td colspan="3" align="center">
+                    <input class="btn" type="button" onclick="tampil()" value="Tampilkan">
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
+
+<script>
+    function tampil(){
+        let deret = parseFloat(document.fib.deret.value);
+        let past = 1, current = 1, next;
+        document.write('<span style="font-family: Georgia,Times New Roman, Times, serif; color:coral;"><b> Deret Fibonacci:<br> </b></span')
+        document.write(deret+" Deret Fibonacci:<br> ")
+        
+        
+        for (let i = 1; i <= deret; i++) {
+            document.write(past+", ")
+            console.log('Deret Fibonacci:'+past+", ");
+            next = past + current;
+            past = current;
+            current = next;
+
+        }   
+    }
+</script>
